@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JS Practice</h1>
+    <div id="container"></div>
+
+    <form action="" id="myForm">
+        <input type="text" name="username" id="username">
+        <input type="submit" value="Submit" name="submit">
+    </form>
+
+    <script>
+
+        let username1 = document.getElementById("username");
+        username1.addEventListener("input", () => {
+            console.log("Current Input" + username1.value)
+        })
+        username1.addEventListener("change", () => {
+            console.log("change Input" + username1.value)
+        })
+        const myForm = document.getElementById("myForm")
+        myForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+
+
+            let botton = event.target.elements["submit"];
+
+            botton.addEventListener('click', () => {
+                console.log("hello world")
+            })
+            let username = document.getElementById("username").value;
+            console.log(username)
+        })
+
+        myDiv = document.getElementById("#container");
+
+        fruits = ["apple", "banana", "pinaple", "orange"];
+
+        fruits.push("Onion")
+
+        console.log(fruits.pop())
+        console.log(fruits.shift())
+        console.log(fruits.unshift("Pawpaw"))
+
+        fruits.forEach(function (fruits, indx) {
+            console.log(indx + ":" + fruits)
+        })
+        console.log(fruits)
+
+        let persons = {
+            "person1": {
+                "firstName": "Abubakar",
+                "lastName": "Sajo",
+                "age": 26,
+                "fullName": function (firstName, lastName) {
+                    return firstName + " " + lastName
+                }
+            },
+            "person2": {
+                "firstName": "Hauwa",
+                "lastName": "Muhammed",
+                "age": 26
+            }
+        }
+
+        console.log(persons['person1'].fullName("Halima", "Sani"))
+
+    </script>
+</body>
+
+</html>
